@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0A0A0B">
+<meta name="description" content="Keralite Brokers — Kerala real estate for rent, sale and property management. Connect on WhatsApp, Instagram, Facebook and YouTube.">
+</head>
+<body>
+<title>Keralite Brokers</title>
+<style>
+  :root {
+    --bg:        #0A0A0B;
+    --ink:       #F4F1E9;
+    --ink-soft:  #8B877C;
+    --gold:      #C9A24B;
+    --gold-lit:  #E4C577;
+    --hair:      rgba(201,162,75,0.22);
+    --sans: "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; min-height: 100dvh; background: var(--bg);
+    font-family: var(--sans); color: var(--ink);
+    display: flex; justify-content: center;
+    -webkit-font-smoothing: antialiased;
+  }
+  .phone { width: 100%; max-width: 430px; background: var(--bg); position: relative; padding-bottom: 44px; }
+
+  /* --- minimal header: black with a single soft gold glow, curved bottom --- */
+  .header {
+    position: relative; height: 264px; color: var(--ink);
+    border-radius: 0 0 46% 46% / 0 0 60px 60px;
+    background:
+      radial-gradient(90% 70% at 50% -8%, rgba(201,162,75,0.30), transparent 60%),
+      #0C0C0D;
+    border-bottom: 1px solid var(--hair);
+    overflow: hidden;
+  }
+  .topbar {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 52px 24px 0;
+  }
+  .logo { display: flex; align-items: center; gap: 9px; font-weight: 600; font-size: 17px; letter-spacing: .01em; }
+  .logo .spark { width: 18px; height: 18px; color: var(--gold); }
+  .logo .spark svg { width: 100%; height: 100%; display: block; }
+
+  .menu { position: relative; }
+  .menu summary {
+    list-style: none; cursor: pointer; width: 30px; height: 30px;
+    display: grid; place-items: center; color: var(--gold);
+  }
+  .menu summary::-webkit-details-marker { display: none; }
+  .menu summary svg { width: 24px; height: 24px; }
+  .menu[open] .sheet { display: block; }
+  .sheet {
+    display: none; position: absolute; right: 0; top: 40px; z-index: 30;
+    background: #101012; border: 1px solid var(--hair);
+    border-radius: 14px; padding: 6px; min-width: 188px;
+  }
+  .sheet a {
+    display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink);
+    font-size: 14px; font-weight: 500; padding: 10px 12px; border-radius: 9px;
+  }
+  .sheet a:hover { background: rgba(201,162,75,0.12); }
+  .sheet a i { color: var(--gold); font-style: normal; font-size: 11px; letter-spacing: .08em; width: 20px; }
+
+  /* --- avatar: thin gold ring on black, gold monogram --- */
+  .avatar-wrap { display: flex; justify-content: center; margin-top: -66px; position: relative; z-index: 5; }
+  .avatar {
+    width: 112px; height: 112px; border-radius: 50%;
+    border: 4px solid var(--bg); background: #0E0E10;
+    display: grid; place-items: center;
+  }
+  .avatar .ring {
+    width: 100%; height: 100%; border-radius: 50%;
+    border: 1.5px solid var(--gold);
+    display: grid; place-items: center; color: var(--gold);
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 600; font-size: 44px; letter-spacing: .01em;
+  }
+
+  /* --- identity --- */
+  .name {
+    text-align: center; font-weight: 700; letter-spacing: -0.02em;
+    font-size: 34px; line-height: 1.08; margin: 22px 20px 14px; text-wrap: balance;
+  }
+  .divider { width: 34px; height: 1.5px; background: var(--gold); margin: 0 auto 16px; opacity: .8; }
+  .bio {
+    text-align: center; color: var(--ink-soft); font-size: 15.5px; line-height: 1.6;
+    max-width: 32ch; margin: 0 auto 30px; padding: 0 24px;
+  }
+
+  /* --- social row: thin gold-ring circles, fill on hover --- */
+  .socials { display: flex; justify-content: center; gap: 16px; margin-bottom: 32px; }
+  .socials a {
+    width: 54px; height: 54px; border-radius: 50%;
+    border: 1px solid var(--hair); color: var(--gold);
+    display: grid; place-items: center; text-decoration: none;
+    transition: background .18s ease, color .18s ease, border-color .18s ease, transform .18s ease;
+  }
+  .socials a:hover, .socials a:focus-visible {
+    background: var(--gold); color: #0A0A0B; border-color: var(--gold);
+    transform: translateY(-2px); outline: none;
+  }
+  .socials a:focus-visible { outline: 2px solid var(--gold-lit); outline-offset: 3px; }
+  .socials svg { width: 23px; height: 23px; display: block; }
+
+  /* --- primary CTA: the one bold gold element --- */
+  .cta-wrap { padding: 0 22px; }
+  .cta {
+    display: flex; align-items: center; gap: 13px; text-decoration: none; color: #0A0A0B;
+    background: linear-gradient(100deg, var(--gold-lit), var(--gold));
+    border-radius: 16px; padding: 15px 17px;
+    transition: transform .18s ease, box-shadow .18s ease;
+    box-shadow: 0 14px 30px -14px rgba(201,162,75,.5);
+  }
+  .cta:hover, .cta:focus-visible {
+    transform: translateY(-2px); box-shadow: 0 20px 38px -14px rgba(201,162,75,.6); outline: none;
+  }
+  .cta:focus-visible { outline: 2px solid var(--gold-lit); outline-offset: 3px; }
+  .cta .disc {
+    width: 38px; height: 38px; border-radius: 50%; flex: none;
+    background: rgba(0,0,0,.14); display: grid; place-items: center; color: #0A0A0B;
+  }
+  .cta .disc svg { width: 21px; height: 21px; }
+  .cta .label { font-weight: 700; font-size: 16px; letter-spacing: -0.01em; }
+  .cta .arrow { margin-left: auto; flex: none; }
+  .cta .arrow svg { width: 19px; height: 19px; display: block; }
+
+  .foot { text-align: center; color: var(--ink-soft); font-size: 12.5px; margin-top: 28px; letter-spacing: .04em; }
+  .foot span { color: var(--gold); margin: 0 6px; }
+
+  @keyframes rise { from { opacity: 0; transform: translateY(10px);} to { opacity: 1; transform: none;} }
+  .an { opacity: 0; animation: rise .5s cubic-bezier(.2,.7,.25,1) forwards; }
+  .a1{animation-delay:.05s}.a2{animation-delay:.13s}.a3{animation-delay:.21s}.a4{animation-delay:.29s}.a5{animation-delay:.37s}
+  @media (prefers-reduced-motion: reduce){ .an{opacity:1;animation:none} .socials a,.cta{transition:none} }
+</style>
+
+<div class="phone">
+  <header class="header">
+    <div class="topbar">
+      <div class="logo">
+        <span class="spark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.9 5.6L19.5 9.5 13.9 11.4 12 17l-1.9-5.6L4.5 9.5l5.6-1.9L12 2Z"/></svg>
+        </span>
+        <span>Keralite Brokers</span>
+      </div>
+      <details class="menu">
+        <summary aria-label="Menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </summary>
+        <nav class="sheet">
+          <a href="https://wa.me/message/TATFLTRVVETYE1" target="_blank" rel="noopener"><i>WA</i>WhatsApp</a>
+          <a href="https://www.instagram.com/keralite_brokers/" target="_blank" rel="noopener"><i>IG</i>Instagram</a>
+          <a href="https://www.facebook.com/Keralitebrokers/" target="_blank" rel="noopener"><i>FB</i>Facebook</a>
+          <a href="https://www.youtube.com/@Keralite.brokers" target="_blank" rel="noopener"><i>YT</i>YouTube</a>
+        </nav>
+      </details>
+    </div>
+  </header>
+
+  <div class="avatar-wrap an a1">
+    <div class="avatar"><div class="ring">K</div></div>
+  </div>
+
+  <h1 class="name an a2">Keralite Brokers</h1>
+  <div class="divider an a2"></div>
+  <p class="bio an a2">A Kerala real-estate agency for rent, sale, and property management.</p>
+
+  <nav class="socials an a3">
+    <a href="https://wa.me/message/TATFLTRVVETYE1" target="_blank" rel="noopener" aria-label="WhatsApp">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm5.8 14.13c-.24.68-1.42 1.32-1.95 1.37-.5.05-1.14.07-1.84-.12-.42-.13-.97-.31-1.66-.61-2.93-1.27-4.84-4.22-4.99-4.42-.15-.2-1.2-1.59-1.2-3.03 0-1.44.76-2.15 1.03-2.44.27-.29.58-.37.78-.37.19 0 .39 0 .56.01.18.01.42-.07.66.5.24.59.83 2.03.9 2.18.07.15.12.32.02.51-.09.2-.14.32-.28.49-.14.17-.29.38-.42.51-.14.14-.28.29-.12.57.16.29.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.22 1.37.28.14.44.12.6-.07.16-.2.69-.8.88-1.08.18-.29.36-.24.6-.14.24.09 1.55.73 1.82.86.27.14.44.2.51.32.07.11.07.66-.17 1.34Z"/></svg>
+    </a>
+    <a href="https://www.instagram.com/keralite_brokers/" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c2.72 0 3.06.01 4.12.06 1.07.05 1.8.22 2.43.47.66.25 1.22.6 1.77 1.15.55.55.9 1.11 1.15 1.77.25.64.42 1.36.47 2.43.05 1.07.06 1.4.06 4.12s-.01 3.06-.06 4.12c-.05 1.07-.22 1.8-.47 2.43-.25.66-.6 1.22-1.15 1.77-.55.55-1.11.9-1.77 1.15-.64.25-1.36.42-2.43.47-1.07.05-1.4.06-4.12.06s-3.06-.01-4.12-.06c-1.07-.05-1.8-.22-2.43-.47a4.9 4.9 0 0 1-1.77-1.15 4.9 4.9 0 0 1-1.15-1.77c-.25-.64-.42-1.36-.47-2.43C2.01 15.06 2 14.72 2 12s.01-3.06.06-4.12c.05-1.07.22-1.8.47-2.43.25-.66.6-1.22 1.15-1.77.55-.55 1.11-.9 1.77-1.15.64-.25 1.36-.42 2.43-.47C8.94 2.01 9.28 2 12 2Zm0 1.8c-2.67 0-2.99.01-4.04.06-.98.04-1.5.21-1.86.35-.47.18-.8.4-1.15.75-.35.35-.57.68-.75 1.15-.14.36-.31.88-.35 1.86-.05 1.05-.06 1.37-.06 4.04s.01 2.99.06 4.04c.04.98.21 1.5.35 1.86.18.47.4.8.75 1.15.35.35.68.57 1.15.75.36.14.88.31 1.86.35 1.05.05 1.37.06 4.04.06s2.99-.01 4.04-.06c.98-.04 1.5-.21 1.86-.35.47-.18.8-.4 1.15-.75.35-.35.57-.68.75-1.15.14-.36.31-.88.35-1.86.05-1.05.06-1.37.06-4.04s-.01-2.99-.06-4.04c-.04-.98-.21-1.5-.35-1.86a3.1 3.1 0 0 0-.75-1.15 3.1 3.1 0 0 0-1.15-.75c-.36-.14-.88-.31-1.86-.35-1.05-.05-1.37-.06-4.04-.06Zm0 3.07a5.13 5.13 0 1 1 0 10.26 5.13 5.13 0 0 1 0-10.26Zm0 1.8a3.33 3.33 0 1 0 0 6.66 3.33 3.33 0 0 0 0-6.66Zm5.34-3.2a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4Z"/></svg>
+    </a>
+    <a href="https://www.facebook.com/Keralitebrokers/" target="_blank" rel="noopener" aria-label="Facebook">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.9h2.54V9.85c0-2.52 1.49-3.91 3.78-3.91 1.09 0 2.24.2 2.24.2v2.47h-1.26c-1.24 0-1.63.78-1.63 1.57v1.88h2.78l-.44 2.9h-2.34V22c4.78-.76 8.43-4.92 8.43-9.94Z"/></svg>
+    </a>
+    <a href="https://www.youtube.com/@Keralite.brokers" target="_blank" rel="noopener" aria-label="YouTube">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.5a3.02 3.02 0 0 0-2.12-2.14C19.5 3.85 12 3.85 12 3.85s-7.5 0-9.38.51A3.02 3.02 0 0 0 .5 6.5C0 8.39 0 12 0 12s0 3.61.5 5.5a3.02 3.02 0 0 0 2.12 2.14c1.88.51 9.38.51 9.38.51s7.5 0 9.38-.51a3.02 3.02 0 0 0 2.12-2.14C24 15.61 24 12 24 12s0-3.61-.5-5.5ZM9.6 15.57V8.43L15.82 12 9.6 15.57Z"/></svg>
+    </a>
+  </nav>
+
+  <div class="cta-wrap an a4">
+    <a class="cta" href="https://wa.me/message/TATFLTRVVETYE1" target="_blank" rel="noopener">
+      <span class="disc" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm5.8 14.13c-.24.68-1.42 1.32-1.95 1.37-.5.05-1.14.07-1.84-.12-.42-.13-.97-.31-1.66-.61-2.93-1.27-4.84-4.22-4.99-4.42-.15-.2-1.2-1.59-1.2-3.03 0-1.44.76-2.15 1.03-2.44.27-.29.58-.37.78-.37.19 0 .39 0 .56.01.18.01.42-.07.66.5.24.59.83 2.03.9 2.18.07.15.12.32.02.51-.09.2-.14.32-.28.49-.14.17-.29.38-.42.51-.14.14-.28.29-.12.57.16.29.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.22 1.37.28.14.44.12.6-.07.16-.2.69-.8.88-1.08.18-.29.36-.24.6-.14.24.09 1.55.73 1.82.86.27.14.44.2.51.32.07.11.07.66-.17 1.34Z"/></svg>
+      </span>
+      <span class="label">Message us on WhatsApp</span>
+      <span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"/></svg></span>
+    </a>
+  </div>
+
+  <p class="foot an a5">Rent <span>·</span> Sale <span>·</span> Property Management</p>
+</div>
+
+</body>
+</html>
